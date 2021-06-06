@@ -2,10 +2,19 @@
 
 echo "Welcome to Coin Flip Simulator"
 
-toss=$((RANDOM%2))
+heads=0
+tails=0
+
+for (( i = 0; i < 20; i++ )); do
+	toss=$((RANDOM%2))
 
 if [[ $toss -eq 0 ]]; then
-	echo Head Wins
+	((++heads))
 else
-	echo Tail Wins
+	((++tails))
 fi
+
+done
+
+echo Head Won $heads times
+echo Tail Won $tails times
